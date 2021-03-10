@@ -8,8 +8,11 @@
 # ------------------------------------------------------------
 
 # Set Paths for Composer
+# Unlike the suggestion by composer / cgr, $PATH is defined first so that drush
+# launcher takes priority compared to the default drush installed by composer /
+# cgr.
 # ------------------------------------------------------------
-export PATH="$HOME/.composer/vendor/bin:$PATH"
+export PATH="$PATH:$HOME/.composer/vendor/bin"
 
 # Set Default Editor (change 'Nano' to the editor of your choice)
 # ------------------------------------------------------------
@@ -31,6 +34,9 @@ export PATH="$HOME/"'.platformsh/bin':"$PATH"
 if [ -f "$HOME/"'.platformsh/shell-config.rc' ]; then . "$HOME/"'.platformsh/shell-config.rc'; fi # END SNIPPET
 # Alternative Platform.sh token authentication
 # export PLATFORMSH_CLI_TOKEN=insert_your_token_here
+
+# Drush launcher fallback.
+export DRUSH_LAUNCHER_FALLBACK=$HOME/.composer/vendor/bin/drush
 
 # To make nvm installed through homebrew to work
 #export NVM_DIR="$HOME/.nvm"
