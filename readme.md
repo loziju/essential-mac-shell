@@ -7,4 +7,4 @@ to zsh. To change to bash, run the following: `chsh -s /bin/bash`.
 
 ## How to use?
 Put all the relevant files and folders under `home` in your laptop's home
-folder.
+folder. Make sure not to replace existing important shell configuration files.
